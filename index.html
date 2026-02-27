@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .step-indicator 
+        {
+        font-size: 12px;
+        letter-spacing: 1px;
+        opacity: 0.75;
+        font-weight: 500;
+        color: #6b7280;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        }
+    .progress-container 
+        {
+        width: 100%;
+        background: #e5e7eb;
+        height: 5px;
+        border-radius: 3px;
+        margin: 12px 0 28px;
+        }
+    .progress-bar 
+        {
+        height: 100%;
+        width: 25%;
+        background: #0b2e59;
+        border-radius: 3px;
+        transition: width 0.4s ease;
+        }
+    .step 
+        {
+        display: none;
+        }
+    .step0 
+        {
+        padding-top: 40px;
+        }
+    .step.active 
+        {
+        display: block;
+        }
+    .step1 
+        {
+        padding-top: 10px;
+        }
+    #step1 .nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+
+/* Welcome Container */
+    .welcome-box 
+        {
+        max-width: 680px;
+        margin-top: 40px;
+        line-height: 1.7;
+        color: #6b7280;
+        }
+
+/* Welcome Heading */
+    .welcome-box h2 {
+        color: #374151;
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        letter-spacing: -0.3px;
+        }
+
+/* Meta / Estimated Time Text */
+    .welcome-box .meta-text 
+        {
+        opacity: 0.85;
+        font-size: 14px;
+        color: #9ca3af;
+        margin-bottom: 20px;
+        }
+
+    .form-column 
+        {
+        max-width: 640px;
+        }
+/* Step 0 Primary Button */
+    #step0 
+    .nav-buttons button 
+        {
+        background: #0b2e59;
+        color: #ffffff;
+        font-weight: 500;
+        padding: 10px 22px;
+        border-radius: 6px;
+        transition: background 0.2s ease;
+        }
+    #step0 
+    .nav-buttons button:hover 
+        {
+        background: #092345;
+        }
+    h1      
+        {
+        margin-bottom: 15px;
+        }
+    #step0 
+    .nav-buttons button 
+        {
+        background: #0b2e59;
+        color: #ffffff;
+        font-weight: 500;
+        }
+    #step0 
+    .nav-buttons button:hover 
+        {
+        background: #092345;
+        }
+    .nav-buttons button:first-child 
+        {
+        background: #e5e7eb;
+        color: #111827;
+        }
+    .nav-buttons button:first-child:hover 
+        {
+        background: #d1d5db;
+        }
+        
+    
+    body 
+        {
+            font-family: 'Inter', sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            color: #1a1a1a;
+        }
+    .header 
+        {
+            background: #0b2e59;
+            padding: 16px 40px;;
+        }
+    .header-container 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }    
+    .logo 
+        { 
+            height: 48px; 
+            object-fit: contain;
+        }
+    .intro-divider 
+        {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 30px 0 30px;
+            opacity: 0.7;
+        }
+    .firm-name 
+        {
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+        }
+    .container 
+        {
+            max-width: 880px;
+            margin: 40px auto;
+            background: white;
+            padding: 35px 50px;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+    h1 { font-size: 28px; font-weight: 500; }
+    @media(min-width: 1024px) 
+            {
+            .intro-text 
+            {
+            font-size: 14px;
+            line-height: 1.8;
+            }
+            }
+
+    .intro-text 
+        {
+            color: #6b7280;
+            margin-bottom: 40px;
+            text-align: justify;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+    h2.section-title 
+        {
+        position: relative;
+        }
+    .section-title::before 
+        {
+            content: "";
+            position: absolute;
+            left: -15px;
+            top: 4px;
+            height: 22px;
+            width: 3px;
+            background: #c8102e;
+            margin-top: 10px;
+        }
+    .section-title 
+        {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        }
+    .question label 
+        {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 4px;
+        }
+
+    .question input 
+        {
+        background: #ffffff;
+        padding: 10px 14px;
+        border: 1px solid #cbd5e1;
+        }
+    .question input:focus 
+        {
+        outline: none;
+        border-color: #0b2e59;
+        box-shadow: 0 0 0 2px rgba(11, 46, 89, 0.08);
+        }
+
+    .question 
+        { 
+            margin-bottom: 18px; 
+        }
+
+    .question h3 
+        {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 12px;
+        }
+
+        .option {
+            display: block;
+            padding: 10px 14px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            margin-bottom: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background: #f0f4ff;
+            border-color: #0b2e59;
+        }
+
+        input[type="radio"] { margin-right: 8px; }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] 
+        {
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            transition: border 0.2s ease, box-shadow 0.2s ease;
+        }
+
+input:focus {
+    outline: none;
+    border-color: #0b2e59;
+    box-shadow: 0 0 0 3px rgba(11, 46, 89, 0.1);
+}
+
+        button {
+            background: #0b2e59;
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        button:hover { background: #091f3a; }
+
+        .result {
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 8px;
+            background: #f3f6ff;
+            border-left: 4px solid #c8102e;
+            display: none;
+        }
+
+        .risk-band {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+            color: #0b2e59;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .disclaimer-wrapper 
+        {
+        margin-top: 80px;
+        border-top: 1px solid #e5e7eb;
+        padding-top: 40px;
+        background: #fafafa;
+        }
+        .disclaimer-content 
+        {
+        max-width: 880px;
+        margin: auto;
+        padding: 0 50px 60px 50px;
+        font-size: 13px;
+        color: #6b7280;
+        line-height: 1.6;
+        }
+    .disclaimer-content h4 
+        {
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 18px;
+        color: #374151;
+        }
+    .disclaimer-content p 
+        {
+        margin-bottom: 14px;
+        }
+#step4 
+        {
+        text-align: center;
+        }
+#step4 
+    .nav-buttons 
+        {
+        margin-top: 28px;
+        max-width: 680px;
+        }
+
+    .form-column .question input 
+        {
+        width: 100% !important;
+        max-width: 100% !important;
+        }
+
+        /* Loading spinner + disabled state */
+        .loading-row{display:flex;align-items:center;gap:10px;margin-top:12px}
+        .spinner{width:18px;height:18px;border:3px solid rgba(0,0,0,.15);border-top-color:rgba(0,0,0,.6);border-radius:50%;animation:spin 0.8s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        button[disabled]{opacity:.65;cursor:not-allowed}
+    
+</style>
+<head>
+    <title>Client Risk Assessment | GOALCHI CAPITAL SERVICES LLP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="header">
+    <div class="header-container">
+        <img src="assets/logo.png" alt="Firm Logo" class="logo">
+        <div class="firm-name"> Goalchi Capital Services LLP</div>
+    </div>
+</header>
+
+<div class="container">
+<form id="riskForm">
+<h1>Client Risk Profiling Assessment</h1>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+<div id="stepError" style="display:none; margin:14px 0; padding:10px 12px; border-radius:10px; background:#fdecec; color:#8a1f17; border:1px solid #f3b1ac;"></div>
+
+<div class="step active" id="step0">
+    <div class="welcome-box">
+        <h2>Welcome</h2>
+        <p class="meta-text">Estimated completion time: 3–5 minutes</p>
+        <p>
+            This assessment is designed to help us understand your risk tolerance,
+            financial objectives, and investment horizon.
+        </p>
+        <p>
+            Your responses are treated as strictly confidential and are used solely
+            to align your portfolio strategy with your risk profile.
+        </p>
+    </div>
+    <div class="nav-buttons">
+        <button type="button" onclick="nextStep()">Begin Assessment</button>
+    </div>
+</div>
+
+<div class="step" id="step1">
+<div class="step-indicator">Step 1 of 4 — Client Information</div>
+<h2 class="section-title">Client Information</h2>
+    <div class="form-column">
+    <!-- Client Info Fields Here -->
+<div class="question">
+    <label>Full Name</label>
+    <input type="text" name="clientName" required>
+</div>
+
+<div class="question">
+<label>Email Address</label>
+<input type="email" name="clientEmail" required>
+</div>
+
+<div class="question">
+<label>Mobile Number</label>
+<input type="tel" name="clientMobile" pattern="[0-9]{10,15}" required>
+</div>
+
+<div class="question">
+<label>City of Residence</label>
+<input type="text" name="clientCity" required>
+</div>
+
+<div class="nav-buttons">
+    <div></div>
+    <button type="button" onclick="nextStep()">Next</button>
+</div>
+</div>
+</div>
+
+
+<div class="step" id="step2">
+<div class="step-indicator">Step 2 of 4 — Risk Capacity</div>
+    <!-- Q1–Q5 Questions -->
+     <h2 class="section-title">Risk Capacity</h2>
+<div class="question">
+<h3>1. Investment Time Horizon</h3>
+<label class="option"><input type="radio" name="q1" value="1" required> Within 3 years</label>
+<label class="option"><input type="radio" name="q1" value="2"> 3–5 years</label>
+<label class="option"><input type="radio" name="q1" value="3"> 6–10 years</label>
+<label class="option"><input type="radio" name="q1" value="4"> 11–15 years</label>
+<label class="option"><input type="radio" name="q1" value="5"> More than 15 years</label>
+</div>
+
+<div class="question">
+<h3>2. Liquidity Reserves</h3>
+<label class="option"><input type="radio" name="q2" value="1" required> Less than 3 months</label>
+<label class="option"><input type="radio" name="q2" value="2"> 3–6 months</label>
+<label class="option"><input type="radio" name="q2" value="3"> 6–12 months</label>
+<label class="option"><input type="radio" name="q2" value="4"> 12–24 months</label>
+<label class="option"><input type="radio" name="q2" value="5"> More than 24 months</label>
+</div>
+
+<div class="question">
+<h3>3. Income Stability</h3>
+<label class="option"><input type="radio" name="q3" value="1" required> Highly unstable</label>
+<label class="option"><input type="radio" name="q3" value="2"> Variable income</label>
+<label class="option"><input type="radio" name="q3" value="3"> Moderately stable</label>
+<label class="option"><input type="radio" name="q3" value="4"> Stable employment</label>
+<label class="option"><input type="radio" name="q3" value="5"> Very stable / predictable</label>
+</div>
+
+<h2 class="section-title">Risk Tolerance</h2>
+
+<div class="question">
+<h3>4. Reaction to a 20% Market Decline</h3>
+<label class="option"><input type="radio" name="q4" value="1" required> Sell all investments</label>
+<label class="option"><input type="radio" name="q4" value="2"> Reduce exposure significantly</label>
+<label class="option"><input type="radio" name="q4" value="3"> Maintain allocation</label>
+<label class="option"><input type="radio" name="q4" value="4"> Increase modestly</label>
+<label class="option"><input type="radio" name="q4" value="5"> Increase aggressively</label>
+</div>
+
+<div class="question">
+<h3>5. Maximum Temporary Portfolio Decline Tolerable</h3>
+<label class="option"><input type="radio" name="q5" value="1" required> 5%</label>
+<label class="option"><input type="radio" name="q5" value="2"> 10%</label>
+<label class="option"><input type="radio" name="q5" value="3"> 20%</label>
+<label class="option"><input type="radio" name="q5" value="4"> 30%</label>
+<label class="option"><input type="radio" name="q5" value="5"> 40%+</label>
+</div>
+    <div class="nav-buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+</div>
+
+
+<div class="step" id="step3">
+<div class="step-indicator">Step 3 of 4 — Risk Tolerance & Experience</div>
+    <!-- Q6–Q15 Questions -->
+     <div class="question">
+<h3>6. Primary Investment Objective</h3>
+<label class="option"><input type="radio" name="q6" value="1" required> Capital preservation</label>
+<label class="option"><input type="radio" name="q6" value="2"> Low growth</label>
+<label class="option"><input type="radio" name="q6" value="3"> Balanced growth</label>
+<label class="option"><input type="radio" name="q6" value="4"> Strong growth</label>
+<label class="option"><input type="radio" name="q6" value="5"> Maximum growth</label>
+</div>
+
+<div class="question">
+<h3>7. Preference Between Guaranteed vs Higher Potential Returns</h3>
+<label class="option"><input type="radio" name="q7" value="1" required> Guaranteed return</label>
+<label class="option"><input type="radio" name="q7" value="2"> Prefer lower risk</label>
+<label class="option"><input type="radio" name="q7" value="3"> Balanced</label>
+<label class="option"><input type="radio" name="q7" value="4"> Prefer higher return potential</label>
+<label class="option"><input type="radio" name="q7" value="5"> Highest potential return</label>
+</div>
+
+<div class="question">
+<h3>8. Decision in a High-Stakes Scenario</h3>
+<label class="option"><input type="radio" name="q8" value="1" required> Secure gains</label>
+<label class="option"><input type="radio" name="q8" value="2"> Lean conservative</label>
+<label class="option"><input type="radio" name="q8" value="3"> Neutral</label>
+<label class="option"><input type="radio" name="q8" value="4"> Lean aggressive</label>
+<label class="option"><input type="radio" name="q8" value="5"> Pursue maximum upside</label>
+</div>
+
+<h2 class="section-title">Experience & Knowledge</h2>
+
+<div class="question">
+<h3>9. Investment Experience</h3>
+<label class="option"><input type="radio" name="q9" value="1" required> None</label>
+<label class="option"><input type="radio" name="q9" value="2"> Limited</label>
+<label class="option"><input type="radio" name="q9" value="3"> Moderate</label>
+<label class="option"><input type="radio" name="q9" value="4"> Experienced</label>
+<label class="option"><input type="radio" name="q9" value="5"> Advanced</label>
+</div>
+
+<div class="question">
+<h3>10. Understanding of Market Risk</h3>
+<label class="option"><input type="radio" name="q10" value="1" required> Very limited</label>
+<label class="option"><input type="radio" name="q10" value="2"> Basic</label>
+<label class="option"><input type="radio" name="q10" value="3"> Working knowledge</label>
+<label class="option"><input type="radio" name="q10" value="4"> Strong</label>
+<label class="option"><input type="radio" name="q10" value="5"> Advanced</label>
+</div>
+
+<div class="question">
+<h3>11. Comfort with Market Volatility</h3>
+<label class="option"><input type="radio" name="q11" value="1" required> Low</label>
+<label class="option"><input type="radio" name="q11" value="2"> Somewhat low</label>
+<label class="option"><input type="radio" name="q11" value="3"> Moderate</label>
+<label class="option"><input type="radio" name="q11" value="4"> High</label>
+<label class="option"><input type="radio" name="q11" value="5"> Very high</label>
+</div>
+
+<div class="question">
+<h3>12. Expected Annual Return</h3>
+<label class="option"><input type="radio" name="q12" value="1" required> 4–6%</label>
+<label class="option"><input type="radio" name="q12" value="2"> 6–8%</label>
+<label class="option"><input type="radio" name="q12" value="3"> 8–10%</label>
+<label class="option"><input type="radio" name="q12" value="4"> 10–12%</label>
+<label class="option"><input type="radio" name="q12" value="5"> 12%+</label>
+</div>
+
+<div class="question">
+<h3>13. Reaction to Portfolio Underperformance</h3>
+<label class="option"><input type="radio" name="q13" value="1" required> Exit immediately</label>
+<label class="option"><input type="radio" name="q13" value="2"> Reduce exposure</label>
+<label class="option"><input type="radio" name="q13" value="3"> Review strategy</label>
+<label class="option"><input type="radio" name="q13" value="4"> Stay invested</label>
+<label class="option"><input type="radio" name="q13" value="5"> Add more capital</label>
+</div>
+
+<div class="question">
+<h3>14. Long-Term Investment Philosophy</h3>
+<label class="option"><input type="radio" name="q14" value="1" required> Defensive</label>
+<label class="option"><input type="radio" name="q14" value="2"> Conservative</label>
+<label class="option"><input type="radio" name="q14" value="3"> Balanced</label>
+<label class="option"><input type="radio" name="q14" value="4"> Growth-focused</label>
+<label class="option"><input type="radio" name="q14" value="5"> Aggressive growth</label>
+</div>
+
+<div class="question">
+<h3>15. Overall Risk Attitude</h3>
+<label class="option"><input type="radio" name="q15" value="1" required> Risk-averse</label>
+<label class="option"><input type="radio" name="q15" value="2"> Cautious</label>
+<label class="option"><input type="radio" name="q15" value="3"> Moderate</label>
+<label class="option"><input type="radio" name="q15" value="4"> Risk-tolerant</label>
+<label class="option"><input type="radio" name="q15" value="5"> Risk-seeking</label>
+</div>
+    <div class="nav-buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+</div>
+
+
+<div class="step" id="step4">
+<div class="step-indicator">Step 4 of 4 — Client Confirmation</div>    
+    <!-- Declaration Checkbox -->
+     <div class="question">
+<label>
+<input type="checkbox" id="declaration" required>
+I confirm that the information provided above is true and accurate to the best of my knowledge.
+</label>
+</div>
+    <div class="nav-buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" id="submitAssessmentBtn" onclick="calculateScore()">Submit Assessment</button>
+                <div id="submitLoading" class="loading-row" style="display:none;">
+                    <div class="spinner" aria-hidden="true"></div>
+                    <span>Submitting…</span>
+                </div>
+    </div>
+</div><!-- step4 -->
+</form>
+</div> <!-- container -->
+
+<script>
+window.isSubmitting = false;
+let currentStep = 0;
+const totalSteps = 4; // final numbered step
+
+function setStepError(message) {
+    const el = document.getElementById("stepError");
+    if (!el) return;
+    if (!message) {
+        el.style.display = "none";
+        el.textContent = "";
+        return;
+    }
+    el.style.display = "block";
+    el.textContent = message;
+}
+
+function scrollToElement(target) {
+    if (!target) return;
+    const y = target.getBoundingClientRect().top + window.scrollY - 120;
+    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+}
+
+function validateStep(stepNumber) {
+    const stepEl = document.getElementById("step" + stepNumber);
+    if (!stepEl) return { ok: true };
+
+    // Collect required radio groups (only the first radio in group usually has required)
+    const requiredRadios = stepEl.querySelectorAll('input[type="radio"][required]');
+    const radioNames = new Set();
+    requiredRadios.forEach(r => radioNames.add(r.name));
+
+    for (const name of radioNames) {
+        const checked = stepEl.querySelector(`input[type="radio"][name="${name}"]:checked`);
+        if (!checked) {
+            const first = stepEl.querySelector(`input[type="radio"][name="${name}"]`);
+            const qMatch = String(name).match(/q(\d+)/i);
+            const qNo = qMatch ? qMatch[1] : null;
+            const msg = qNo ? `Before proceeding, please answer Question ${qNo}.` : "Please answer all questions before continuing.";
+            return { ok: false, element: first, message: msg };
+        }
+    }
+
+    // Required text/email/tel/checkbox inputs
+    const requiredInputs = stepEl.querySelectorAll('input[required]:not([type="radio"])');
+    for (const input of requiredInputs) {
+        if (input.type === "checkbox") {
+            if (!input.checked) {
+                return { ok: false, element: input, message: "Please confirm the declaration before submitting." };
+            }
+            continue;
+        }
+
+        if ((input.value || "").trim() === "") {
+            return { ok: false, element: input, message: "Please fill all required fields before continuing." };
+        }
+
+        if (input.type === "email" && input.validity && !input.validity.valid) {
+            return { ok: false, element: input, message: "Please enter a valid email address." };
+        }
+
+        if (input.type === "tel" && input.validity && !input.validity.valid) {
+            return { ok: false, element: input, message: "Please enter a valid mobile number." };
+        }
+    }
+
+    return { ok: true };
+}
+
+function validateAndStayOnStep(stepNumber) {
+    setStepError("");
+    const result = validateStep(stepNumber);
+    if (result.ok) return true;
+
+    setStepError(result.message);
+    if (result.element) {
+        // Focusable might be hidden by styling; scroll still helps.
+        scrollToElement(result.element);
+        try { result.element.focus({ preventScroll: true }); } catch (e) {}
+    }
+    return false;
+}
+
+function nextStep() {
+    if (!validateAndStayOnStep(currentStep)) return;
+    if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+}
+
+function prevStep() {
+    if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+}
+
+function showStep(step) {
+    setStepError("");
+    document.querySelectorAll(".step").forEach(s => s.classList.remove("active"));
+    document.getElementById("step" + step).classList.add("active");
+
+    const progressPercent = (step === 0) ? 0 : (step / totalSteps) * 100;
+    document.getElementById("progressBar").style.width = progressPercent + "%";
+}
+
+function updateProgress(step) {
+    const progressBar = document.getElementById("progressBar");
+
+    if (step === 0) {
+        progressBar.style.width = "0%";
+        return;
+    }
+
+    const percent = ((step) / totalSteps) * 100;
+    progressBar.style.width = percent + "%";
+}
+</script>
+
+<div class="result" id="resultBox">
+<div>Total Score: <span id="scoreOutput"></span></div>
+<div class="risk-band" id="bandOutput"></div>
+</div>
+
+</div>
+
+<footer>
+© 2026 Goalchi Capital Services LLP | Confidential Client Assessment
+</footer>
+
+<div class="disclaimer-wrapper">
+    <div class="disclaimer-content">
+        <h4>Disclaimer</h4>
+
+        <p>
+        Risk assessment is inherently subjective and dependent upon multiple factors, including personal circumstances, financial condition, market environment, and individual interpretation of risk.
+        </p>
+
+        <p>
+        An individual's risk profile may change over time due to changes in financial position, investment objectives, lifestyle, income stability, or other life events. Periodic reassessment is recommended.
+        </p>
+
+        <p>
+        This questionnaire represents one of several tools and methodologies used by Goalchi Capital Services LLP to assist in determining an indicative risk profile aligned with a client’s stated preferences and circumstances.
+        </p>
+
+        <p>
+        While reasonable care and professional judgment have been exercised in designing this assessment, no representation or warranty is made that the resulting risk classification is definitive or universally appropriate.
+        </p>
+
+        <p>
+        This document does not constitute investment advice, a recommendation, or a solicitation for the purchase or sale of any financial instrument or product.
+        </p>
+
+        <p>
+        Investors are advised to exercise independent judgment and seek appropriate professional guidance before making any investment decisions.
+        </p>
+    </div>
+</div>
+
+<script>
+async function calculateScore() {
+    if (window.isSubmitting) return;
+
+    const form = document.getElementById("riskForm");
+    const submitBtn = document.getElementById("submitAssessmentBtn");
+    const loadingEl = document.getElementById("submitLoading");
+    const errorEl = document.getElementById("submitError");
+
+    if (errorEl) { errorEl.style.display = "none"; errorEl.textContent = ""; }
+
+    // Custom validation (prevents browser errors with hidden required fields)
+    for (let step = 1; step <= totalSteps; step++) {
+        if (!validateAndStayOnStep(step)) {
+            currentStep = step;
+            showStep(step);
+            return;
+        }
+    }
+
+    window.isSubmitting = true;
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.innerText = "Submitting..."; }
+    if (loadingEl) loadingEl.style.display = "flex";
+
+    const formData = new FormData(form);
+
+    let total = 0;
+    for (let i = 1; i <= 15; i++) total += parseInt(formData.get("q" + i), 10);
+
+    const horizon = parseInt(formData.get("q1"), 10);
+    const liquidity = parseInt(formData.get("q2"), 10);
+
+    let band = "";
+    if (total <= 30) band = "Capital Preservation";
+    else if (total <= 45) band = "Conservative";
+    else if (total <= 60) band = "Moderate";
+    else if (total <= 70) band = "Growth";
+    else band = "Aggressive Growth";
+
+    let override = "No";
+    if (horizon <= 2 || liquidity <= 2) {
+        if (band === "Growth" || band === "Aggressive Growth") {
+            band = "Moderate (Capacity Override Applied)";
+            override = "Yes";
+        }
+    }
+
+    const submissionId = "GC-" + Date.now();
+
+    const payload = new URLSearchParams({
+        submissionId,
+        name: formData.get("clientName") || "",
+        email: formData.get("clientEmail") || "",
+        mobile: formData.get("clientMobile") || "",
+        city: formData.get("clientCity") || "",
+        q1: formData.get("q1") || "",
+        q2: formData.get("q2") || "",
+        q3: formData.get("q3") || "",
+        q4: formData.get("q4") || "",
+        q5: formData.get("q5") || "",
+        q6: formData.get("q6") || "",
+        q7: formData.get("q7") || "",
+        q8: formData.get("q8") || "",
+        q9: formData.get("q9") || "",
+        q10: formData.get("q10") || "",
+        q11: formData.get("q11") || "",
+        q12: formData.get("q12") || "",
+        q13: formData.get("q13") || "",
+        q14: formData.get("q14") || "",
+        q15: formData.get("q15") || "",
+        score: String(total),
+        band: band,
+        override: override,
+        version: "v1.0 - Jan 2026"
+    });
+
+    try {
+        await fetch("https://script.google.com/macros/s/AKfycbzJib3sQsKvVPb7-H0Xy4Dalh5Sfvr8naY63Rp1Z9ar32ZychT6zSvyfnhFv7qHC9Va5A/exec", {
+            method: "POST",
+            body: payload,
+            mode: "no-cors"
+        });
+
+        const submission = {
+            submittedAt: new Date().toISOString(),
+            clientName: formData.get("clientName") || "",
+            clientEmail: formData.get("clientEmail") || "",
+            clientMobile: formData.get("clientMobile") || "",
+            clientCity: formData.get("clientCity") || "",
+            answers: Object.fromEntries(Array.from({ length: 15 }, (_, i) => {
+                const key = "q" + (i + 1);
+                return [key, formData.get(key)];
+            }))
+        };
+
+        try { sessionStorage.setItem("riskProfilerSubmission", JSON.stringify(submission)); }
+        catch (e) { console.warn("sessionStorage not available", e); }
+
+        window.location.href = "thankyou.html";
+        return;
+    } catch (error) {
+        console.error(error);
+        if (errorEl) {
+            errorEl.style.display = "block";
+            errorEl.textContent = "Submission failed. Please check your internet connection and try again.";
+        }
+    }
+
+    window.isSubmitting = false;
+    if (loadingEl) loadingEl.style.display = "none";
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.innerText = "Submit Assessment"; }
+}
+</script>
+</body>
+</html>
