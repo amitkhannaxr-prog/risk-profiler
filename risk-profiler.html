@@ -1,0 +1,276 @@
+<!-- =========================================================
+File: risk-profiler.html
+Premium landing page for Risk Profiling
+========================================================= -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Risk Profiling | Goalchi Capital</title>
+  <style>
+    :root{
+      --bg:#f6f7fb; --card:#fff; --text:#0f172a; --muted:#475569; --border:#e5e7eb;
+      --brand:#0b2d5b; --brand2:#0f3d78; --shadow:0 10px 30px rgba(15,23,42,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    header{
+      background:#fff;
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{
+      max-width:1100px;
+      margin:0 auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand-left{display:flex;align-items:center;gap:12px}
+    .brand-left img{height:34px;width:auto;display:block}
+    .brand-left .t{display:flex;flex-direction:column;gap:2px}
+    .brand-left b{font-size:14px;letter-spacing:.2px}
+    .brand-left span{font-size:12px;color:var(--muted)}
+    .brand-right{font-weight:900;color:var(--brand);letter-spacing:.2px}
+
+    main{max-width:1100px;margin:28px auto 64px;padding:0 16px}
+    .shell{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero{
+      padding:28px 26px;
+      border-bottom:1px solid var(--border);
+      background:
+        radial-gradient(800px 200px at 20% 0%, rgba(11,45,91,.10), transparent 60%),
+        radial-gradient(900px 220px at 85% 10%, rgba(15,61,120,.10), transparent 55%),
+        #fff;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr;} }
+    h1{margin:0 0 10px;font-size:34px;letter-spacing:-.6px;line-height:1.12}
+    .lead{margin:0;color:var(--muted);max-width:70ch}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--border);
+      background:#f8fafc;
+      font-weight:900;font-size:12px;color:#111827;
+    }
+    .cta-card{
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:#fff;
+      padding:16px;
+      box-shadow:0 8px 20px rgba(15,23,42,.06);
+    }
+    .cta-title{font-weight:950;margin:0 0 6px}
+    .cta-sub{margin:0 0 12px;color:var(--muted);font-size:13px}
+    .btns{display:flex;flex-wrap:wrap;gap:10px}
+    a.btn{
+      text-decoration:none;
+      display:inline-flex;align-items:center;justify-content:center;
+      border-radius:12px;padding:12px 14px;font-weight:1000;font-size:14px;
+    }
+    .primary{
+      background:linear-gradient(180deg,var(--brand),#08244a);
+      color:#fff;
+      box-shadow:0 10px 18px rgba(11,45,91,.18);
+      min-width:200px;
+    }
+    .secondary{background:#eef2f7;color:#111827}
+    .tiny{font-size:12px;color:var(--muted);margin-top:10px}
+
+    .section{padding:22px 26px}
+    .section h2{margin:0 0 10px;font-size:18px;letter-spacing:-.2px}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:12px;
+    }
+    @media (max-width: 950px){ .cards{grid-template-columns:1fr;} }
+    .card{
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px 14px;
+      background:#fff;
+    }
+    .card b{display:block;margin-bottom:6px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+
+    .how{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+    @media (max-width: 950px){ .how{grid-template-columns:1fr;} }
+    .step{
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px 14px;
+      background:#f8fafc;
+    }
+    .num{
+      width:30px;height:30px;border-radius:10px;
+      display:inline-flex;align-items:center;justify-content:center;
+      background:#fff;border:1px solid var(--border);
+      font-weight:1000;color:var(--brand);
+      margin-bottom:8px;
+    }
+    .step b{display:block;margin-bottom:6px}
+    .step p{margin:0;color:var(--muted);font-size:13px}
+
+    .disclaimer{
+      margin-top:12px;
+      padding:12px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+      margin-top:18px;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="header-inner">
+    <div class="brand-left">
+      <img src="assets/logo.png" alt="Goalchi Capital logo" />
+      <div class="t">
+        <b>Goalchi Capital</b>
+        <span>Risk Profiling & Suitability</span>
+      </div>
+    </div>
+    <div class="brand-right">Goalchi Capital Services LLP</div>
+  </div>
+</header>
+
+<main>
+  <div class="shell">
+    <div class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Risk profiling that leads to the right asset allocation.</h1>
+          <p class="lead">
+            A well-designed portfolio begins with clarity: how much risk you <b>can</b> take (capacity) and how much risk you’re
+            <b>comfortable</b> taking (tolerance). Our assessment helps align your investment strategy with your goals, time horizon,
+            liquidity needs and behaviour under market stress.
+          </p>
+
+          <div class="pill-row">
+            <div class="pill">~3–4 minutes</div>
+            <div class="pill">Confidential</div>
+            <div class="pill">Report emailed to you</div>
+            <div class="pill">Advisor follow-up</div>
+          </div>
+        </div>
+
+        <div class="cta-card">
+          <p class="cta-title">Begin Risk Assessment</p>
+          <p class="cta-sub">
+            You’ll receive an indicative risk band and a suggested long-term allocation (equity/debt/alternatives).
+          </p>
+          <div class="btns">
+            <a class="btn primary" href="index-premium.html">Begin Risk Assessment</a>
+            <a class="btn secondary" href="index.html">Use Current Version</a>
+          </div>
+          <div class="tiny">
+            Your final portfolio allocation is confirmed after an advisor review of goals, constraints and cashflows.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Why risk profiling matters</h2>
+      <div class="cards">
+        <div class="card">
+          <b>Better decisions in volatile markets</b>
+          <p>
+            Portfolios fail most often due to behaviour. Understanding your tolerance helps build an allocation you can stay invested in.
+          </p>
+        </div>
+        <div class="card">
+          <b>Allocation aligned to goals and horizon</b>
+          <p>
+            Time horizon and liquidity needs shape how much volatility the portfolio can absorb without compromising objectives.
+          </p>
+        </div>
+        <div class="card">
+          <b>Suitability and governance</b>
+          <p>
+            A documented risk profile supports suitability discussions and creates a disciplined foundation for ongoing reviews.
+          </p>
+        </div>
+      </div>
+
+      <div class="how">
+        <div class="step">
+          <div class="num">1</div>
+          <b>We assess capacity & tolerance</b>
+          <p>
+            Capacity reflects your financial ability to take risk. Tolerance reflects your comfort with drawdowns and volatility.
+          </p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <b>We map to an indicative risk band</b>
+          <p>
+            Your responses translate to a structured risk band with guardrails (e.g., short horizon caps excessive risk).
+          </p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <b>We recommend a long-term allocation</b>
+          <p>
+            We provide an indicative allocation range across equity, fixed income and alternatives to match your profile.
+          </p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <b>Advisor validation & implementation</b>
+          <p>
+            Your advisor reviews goals, constraints and cashflows before finalizing the portfolio and rebalancing plan.
+          </p>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <b>Confidentiality & disclaimer:</b>
+        Your information is used solely for suitability and advisory purposes. This assessment supports a discussion and does not constitute investment advice or a recommendation.
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2026 Goalchi Capital Services LLP • Confidential Client Assessment</footer>
+</main>
+</body>
+</html>
