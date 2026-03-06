@@ -352,53 +352,99 @@
   </main>
 
   <script>
-    (function(){
-      const yearEl = document.getElementById("year");
-      yearEl.textContent = String(new Date().getFullYear());
+  (function () {
+    // --- Update these IDs to match your HTML ---
+    const elRiskBand = document.getElementById("riskBandValue");
+    const elScore = document.getElementById("scoreValue");
+    const elStatus = document.getElementById("statusValue");
 
-      const toggleBtn = document.getElementById("toggleResults");
-      const panel = document.getElementById("resultsPanel");
+    const summaryWrap = document.getElementById("riskSummaryWrap"); // container that CTA shows/hides
+    const toggleBtn = document.getElementById("toggleSummaryBtn");
 
-      const bandEl = document.getElementById("riskBand");
-      const scoreEl = document.getElementById("score");
+    // Try multiple storage keys (covers older/newer versions)
+    const STORAGE_KEYS = [
+      "riskProfilerSubmissionPremium",
+      "riskProfilerSubmission",
+      "riskProfilerSubmissionV2",
+      "riskProfilerResult",
+      "rpSubmission"
+    ];
 
-      function norm(s){
-        return String(s || "").trim().toLowerCase();
+    function safeJsonParse(s) {
+      try { return JSON.parse(s); } catch { return null; }
+    }
+
+    function getFromStorage() {
+      for (const k of STORAGE_KEYS) {
+        const raw = sessionStorage.getItem(k) || localStorage.getItem(k);
+        if (!raw) continue;
+
+        const parsed = safeJsonParse(raw);
+        if (parsed && typeof parsed === "object") return parsed;
       }
+      return null;
+    }
 
-      function pickFromSession(keys){
-        for (const k of keys){
-          const v = window.sessionStorage.getItem(k);
-          if (v && String(v).trim()) return String(v).trim();
-        }
-        return "";
-      }
+    function normalizeResult(obj) {
+      if (!obj) return null;
 
-      // Try multiple keys to be resilient to earlier versions
-      const riskBand = pickFromSession(["riskBand","band","risk_profile_band","rp_band"]);
-      const score = pickFromSession(["totalScore","score","rp_score","riskScore"]);
+      // Support multiple naming schemes
+      const band =
+        obj.band ??
+        obj.riskBand ??
+        obj.risk_band ??
+        obj.riskBandText ??
+        "";
 
-      bandEl.textContent = riskBand || "—";
-      scoreEl.textContent = score || "—";
+      const score =
+        obj.score ??
+        obj.score100 ??
+        obj.totalScore ??
+        obj.total_score ??
+        "";
 
-      // Highlight matching row if possible
-      const rows = document.querySelectorAll("#allocBody tr[data-band]");
-      const b = norm(riskBand);
-      if (b){
-        rows.forEach(r => {
-          r.classList.remove("isSelected");
-          if (b.includes(r.getAttribute("data-band"))) r.classList.add("isSelected");
-        });
-      }
+      const status =
+        obj.status ??
+        obj.submissionStatus ??
+        "Submitted";
 
-      toggleBtn.addEventListener("click", function(){
-        const isOpen = panel.classList.toggle("show");
-        toggleBtn.textContent = isOpen ? "Hide your risk profile summary" : "View your risk profile summary";
-        if (isOpen) {
-          panel.scrollIntoView({behavior:"smooth", block:"start"});
-        }
+      // also keep name/email if you need later
+      return {
+        band: String(band || "").trim(),
+        score: String(score || "").trim(),
+        status: String(status || "Submitted").trim()
+      };
+    }
+
+    function render(result) {
+      // If elements are missing, fail silently (prevents JS crash)
+      if (elRiskBand) elRiskBand.textContent = result?.band || "—";
+      if (elScore) elScore.textContent = result?.score || "—";
+      if (elStatus) elStatus.textContent = result?.status || "Submitted";
+    }
+
+    function setSummaryVisible(visible) {
+      if (!summaryWrap || !toggleBtn) return;
+      summaryWrap.style.display = visible ? "block" : "none";
+      toggleBtn.textContent = visible ? "Hide your risk profile summary" : "View your risk profile summary";
+      toggleBtn.setAttribute("aria-expanded", String(visible));
+    }
+
+    // --- Init ---
+    const rawObj = getFromStorage();
+    const result = normalizeResult(rawObj);
+    render(result);
+
+    // default: keep summary visible if result exists, else collapsed
+    setSummaryVisible(Boolean(result && (result.band || result.score)));
+
+    if (toggleBtn && summaryWrap) {
+      toggleBtn.addEventListener("click", function () {
+        const isVisible = summaryWrap.style.display !== "none";
+        setSummaryVisible(!isVisible);
       });
-    })();
-  </script>
+    }
+  })();
+</script>
 </body>
 </html>
