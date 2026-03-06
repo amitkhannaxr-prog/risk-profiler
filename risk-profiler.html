@@ -230,7 +230,89 @@ Premium landing page (brand accents + contact + expanded FAQs)
     .faq p{margin:10px 0 0;color:var(--muted);font-size:13px}
 
     footer{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}
-  </style>
+  
+    /* FAQ section (premium dark panel) */
+.faqSection{
+  margin-top:18px;
+  padding:18px 18px;
+  border-radius:18px;
+  background:
+    radial-gradient(1200px 420px at 15% 0%, rgba(201,162,39,.18), rgba(201,162,39,0) 55%),
+    linear-gradient(180deg, rgba(11,45,91,1), rgba(7,24,48,1));
+  border:1px solid rgba(201,162,39,.28);
+  box-shadow: 0 10px 30px rgba(3,10,20,.25);
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+}
+.faqSection:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,0) 35%),
+    radial-gradient(900px 260px at 85% 10%, rgba(15,61,120,.75), rgba(15,61,120,0) 60%);
+  pointer-events:none;
+  opacity:.55;
+}
+.faqSection > *{ position:relative; z-index:1; }
+.faqSection h2{
+  margin:0 0 8px;
+  color:#fff;
+  letter-spacing:.2px;
+  font-size:18px;
+}
+.faqSection .subtle{
+  color: rgba(255,255,255,.78);
+  margin:0 0 10px;
+  font-size:12px;
+}
+
+.faq details{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  margin:8px 0;
+  overflow:hidden;
+  backdrop-filter: blur(6px);
+}
+.faq details:hover{ border-color: rgba(201,162,39,.35); }
+.faq summary{
+  padding:12px 14px;
+  cursor:pointer;
+  list-style:none;
+  font-weight:750;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.faq summary::-webkit-details-marker{display:none}
+
+.faq .chev{
+  width:26px;height:26px;border-radius:9px;
+  background: rgba(201,162,39,.14);
+  border: 1px solid rgba(201,162,39,.35);
+  display:flex;align-items:center;justify-content:center;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+  color: #fff;
+  flex:0 0 26px;
+  font-weight:900;
+}
+details[open] .chev{
+  transform: rotate(45deg);
+  background: rgba(201,162,39,.22);
+  border-color: rgba(201,162,39,.55);
+}
+.faq p{
+  margin: 0;
+  padding: 0 14px 14px;
+  color: rgba(255,255,255,.80);
+  font-size:12.5px;
+  line-height:1.55;
+}
+</style>
 </head>
 
 <body>
@@ -275,7 +357,7 @@ Premium landing page (brand accents + contact + expanded FAQs)
             </p>
             <div class="btns">
               <a class="btn primary" href="index-premium.html">Begin Risk Assessment</a>
-                          </div>
+</div>
 
             <div class="support">
               <b>Need help?</b> Contact our Team at
@@ -331,7 +413,8 @@ Premium landing page (brand accents + contact + expanded FAQs)
         </div>
       </div>
 
-      <h2 style="margin-top:18px;">FAQs</h2>
+      <section class="faqSection">
+      <h2>FAQs</h2>
       <div class="faq">
         <details>
           <summary>What is risk profiling? <span class="chev">+</span></summary>
@@ -407,6 +490,7 @@ Premium landing page (brand accents + contact + expanded FAQs)
           <p>Choose what best reflects your likely behaviour during volatility. If needed, call +91 8427132300 for assistance.</p>
         </details>
       </div>
+    </section>
 
       <div class="disclaimer">
         <b>Disclaimer:</b>

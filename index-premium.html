@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Confidential risk profiling assessment to support portfolio suitability and indicative asset allocation." />
   <title>Risk Profiler (Premium) | Goalchi Capital</title>
   <style>
     :root{
@@ -74,11 +73,6 @@
 </head>
 
 <body>
-<noscript>
-  <div style="max-width:1100px;margin:12px auto;padding:10px 16px;border:1px solid #f3b1ac;background:#fdecec;color:#8a1f17;border-radius:12px;font-weight:900;">
-    JavaScript is required to complete this assessment. Please enable JavaScript and reload.
-  </div>
-</noscript>
 <header>
   <div class="header-inner">
     <div class="brand-left">
@@ -98,7 +92,7 @@
       <h1>Risk Profiling Assessment</h1>
       <p>
         To help us tailor advice appropriately, we’ll ask a short set of questions about your <b>risk capacity</b> and <b>risk tolerance</b>.
-        Your indicative profile and allocation will be shown after submission, and a full report will be emailed to you.
+        Your indicative profile and allocation will be shown after submission, and a full report will be emailed to you (CC: info@goalchicapital.com).
       </p>
     </div>
 
@@ -110,10 +104,10 @@
       </div>
     </div>
 
-    <div class="banner-error" id="stepError" role="alert" aria-live="polite"></div>
+    <div class="banner-error" id="stepError"></div>
 
     <div class="content">
-      <form id="riskForm" novalidate>
+      <form id="riskForm">
         <section class="step active" id="step0">
           <h2 style="margin:0 0 10px;font-size:18px;">Welcome</h2>
           <p style="margin:0 0 14px;color:var(--muted);">
@@ -135,19 +129,19 @@
           <div class="grid">
             <div class="field">
               <label for="clientName">Full name</label>
-              <input id="clientName" name="clientName" type="text" autocomplete="name" required />
+              <input id="clientName" name="clientName" type="text" required />
             </div>
             <div class="field">
               <label for="clientEmail">Email address</label>
-              <input id="clientEmail" name="clientEmail" type="email" autocomplete="email" required />
+              <input id="clientEmail" name="clientEmail" type="email" required />
             </div>
             <div class="field">
               <label for="clientMobile">Mobile number</label>
-              <input id="clientMobile" name="clientMobile" type="tel" inputmode="numeric" autocomplete="tel" pattern="[0-9]{10,15}" required />
+              <input id="clientMobile" name="clientMobile" type="tel" pattern="[0-9]{10,15}" required />
             </div>
             <div class="field">
               <label for="clientCity">City of residence</label>
-              <input id="clientCity" name="clientCity" type="text" autocomplete="address-level2" required />
+              <input id="clientCity" name="clientCity" type="text" required />
             </div>
           </div>
 
@@ -369,10 +363,10 @@
 </main>
 
 <script>
-  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzjD0Mj9XL-zmG_CtfbTXwYBms_9jDa8o7XwnQ6sK7k3A0YX2amugnlLtCmyMssdzNvdw/exec";
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbydMWCXrRuC15eHeBy0z2GFWbkvI3JZ7YY8QBzlAISZsvvwuySs_Wn8SWBzv2_bthd6mw/exec";
   const VERSION = "premium_v3";
 
-  const TOTAL_STEPS = 5; // steps 0..4
+  const totalSteps = 4;
   let currentStep = 0;
   window.isSubmitting = false;
 
@@ -400,10 +394,10 @@
     setStepError("");
     document.querySelectorAll(".step").forEach(s=>s.classList.remove("active"));
     document.getElementById("step"+step).classList.add("active");
-    const pct=(step===0)?0:(step/(TOTAL_STEPS-1))*100;
+    const pct=(step===0)?0:(step/4)*100;
     document.getElementById("progressBar").style.width=pct+"%";
     const names={0:"Welcome",1:"Client details",2:"Mindset",3:"Capacity",4:"Tolerance & confirmation"};
-    document.getElementById("stepLabelLeft").textContent=`Step ${Math.min(step+1,TOTAL_STEPS)} of ${TOTAL_STEPS}`;
+    document.getElementById("stepLabelLeft").textContent=`Step ${Math.min(step+1,5)} of 5`;
     document.getElementById("stepLabelRight").textContent=names[step]||"";
     window.scrollTo({top:0,behavior:"smooth"});
   }
@@ -447,11 +441,7 @@
     setStepError(res.message);
     const focusTarget=res.element?.closest(".question")||res.element;
     scrollToElement(focusTarget);
-    try{
-      if(!/^https:\/\//i.test(WEB_APP_URL) || WEB_APP_URL.includes("PASTE_YOUR_LATEST")){
-        throw new Error("WEB_APP_URL is not configured.");
-      }
-res.element.focus({preventScroll:true});}catch{}
+    try{res.element.focus({preventScroll:true});}catch{}
     return false;
   }
 
