@@ -1,5 +1,5 @@
 <!-- =========================================================
-File: risk-profiler.html
+File: index.html
 Premium landing page (brand accents + contact + expanded FAQs)
 ========================================================= -->
 <!doctype html>
@@ -57,6 +57,7 @@ Premium landing page (brand accents + contact + expanded FAQs)
     .hero{
       padding:28px 26px;
       border-bottom:1px solid var(--border);
+      text-align: justify;
       background:
         radial-gradient(900px 260px at 18% 0%, rgba(11,45,91,.14), transparent 60%),
         radial-gradient(900px 240px at 90% 10%, rgba(201,162,39,.14), transparent 55%),
@@ -69,7 +70,28 @@ Premium landing page (brand accents + contact + expanded FAQs)
       align-items:start;
     }
     @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr;} }
+.sectionHeading{
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f2a44;           /* same navy */
+  margin: 26px 0 10px;
+}
 
+.sectionAccent{
+  width: 110px;
+  height: 4px;
+  background: #b39234;      /* same premium gold */
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.sectionLead{
+  margin: 0 0 18px;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 75ch;
+}
     h1{margin:0 0 10px;font-size:34px;letter-spacing:-.6px;line-height:1.12}
     .lead{margin:0;color:var(--muted);max-width:72ch}
 
@@ -312,6 +334,40 @@ details[open] .chev{
   font-size:12.5px;
   line-height:1.55;
 }
+/* Key Takeaways: minimal overrides only (targets your actual classes) */
+.keyTakeaways { 
+  margin-top: 24px; 
+}
+
+.keyTakeaways > h2 { 
+  margin: 0 0 14px; 
+}
+
+/* Slightly tighten only these cards (without changing global style) */
+.keyTakeaways .how { 
+  gap: 18px;              /* if your .how is grid/flex */
+}
+
+.keyTakeaways .step { 
+  padding-top: 16px; 
+}
+
+/* Make the number badge a touch smaller and more premium */
+.keyTakeaways .num { 
+  width: 30px; 
+  height: 30px; 
+  border-radius: 10px; 
+  font-size: 14px; 
+}
+.keyTakeaways .how{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 960px){
+  .keyTakeaways .how{ grid-template-columns: 1fr; }
+}
 </style>
 </head>
 
@@ -334,62 +390,71 @@ details[open] .chev{
     <div class="hero">
       <div class="hero-grid">
         <div>
-          <h1>Risk profiling that leads to the right asset allocation.</h1>
+          <h1>Risk profiling that guides the right asset allocation.</h1>
           <p class="lead">
             A robust portfolio starts with clarity: how much risk you <b>can</b> take (capacity) and how much risk you’re
-            <b>comfortable</b> taking (tolerance). This assessment supports suitability and helps align allocation to time horizon,
-            liquidity needs and behaviour during market stress.
-          </p>
+            <b>comfortable</b> taking (tolerance), and the <b>time</b> you have to invest (horizon). 
+            <br>
+            <br>
+            This suitability-led assessment helps align allocation to your goals, 
+            time horizon, liquidity needs and behaviour during market volatility.
+                    </p><br>
+          
+  
 
           <div class="pill-row">
-            <div class="pill"><span class="dot"></span> ~3–4 minutes</div>
-            <div class="pill"><span class="dot"></span> Confidential</div>
-            <div class="pill"><span class="dot"></span> Report emailed to you</div>
-            <div class="pill"><span class="dot"></span> Discussion call</div>
+            <div class="pill"><span class="dot"></span> Takes ~4–5 Minutes</div>
+            <div class="pill"><span class="dot"></span> Results are Confidential</div>
+            <div class="pill"><span class="dot"></span> Assesses Capacity & Tolerance</div>
+            <div class="pill"><span class="dot"></span> Guides Portfolio Strategy</div>
           </div>
         </div>
 
         <div class="cta-card">
           <div class="cta-inner">
-            <p class="cta-title">Begin Risk Assessment</p>
+            <p class="cta-title">Begin your Risk Profiling</p>
             <p class="cta-sub">
-              You’ll receive an indicative risk band and a suggested long-term allocation (equity / debt / alternatives).
+              Based on your responses, the Goalchi Capital team will determine your risk profile and outline an appropriate portfolio strategy aligned to your goals and time horizon—followed by a conversation to agree next steps.
             </p>
             <div class="btns">
-              <a class="btn primary" href="index-premium.html">Begin Risk Assessment</a>
+              <a class="btn primary" href="index-premium.html">Start Assessment</a>
 </div>
 
+            <div class="tiny">
+              The indicative allocation is a suitability guide. Final recommendations depend on objectives, constraints and cash flows.
+            </div>
+
             <div class="support">
-              <b>Need help?</b> Contact our Team at
-              <a href="tel:+918427132300">+91 8427132300</a>
+              <b>Need help?</b> <br>
+              Contact our Team at
+              <a href="tel:+919871511236">+91 98715 11236</a>
               for any support in filling this Risk Profiler form.
             </div>
 
-            <div class="tiny">
-              The indicative allocation is a suitability guide. Final implementation depends on objectives, constraints and cashflows.
-            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="section">
-      <h2>Why risk profiling matters</h2>
-      <div class="cards">
+        <div class="section">
+        <h2>Why Risk Profiling Matters</h2>
+        <div class="cards">
         <div class="card">
-          <b>Designed for real-world behaviour</b>
+          <b>Behaviour-aware allocation</b>
           <p>Risk profiling helps set an allocation you can stay invested with across market cycles—especially during volatility.</p>
         </div>
         <div class="card">
-          <b>Aligned to horizon and liquidity</b>
+          <b>Time horizon and Liquidity alignment</b>
           <p>Time horizon and cash needs influence how much volatility a portfolio can absorb without disruption to goals.</p>
         </div>
         <div class="card">
-          <b>Structured suitability framework</b>
-          <p>A documented profile supports suitability discussions and creates a disciplined basis for periodic reviews.</p>
+          <b>A framework that evolves with you</b>
+          <p>Your profile is reviewed periodically and updated when goals, time horizon, income or liquidity needs change.</p>
         </div>
-      </div>
-
+        </div>
+        </div>
+      <div class="section keyTakeaways">
+      <h2>Risk Profile: Key Takeaways</h2>
       <div class="how">
         <div class="step">
           <div class="num">1</div>
@@ -412,12 +477,15 @@ details[open] .chev{
           <p>We review objectives and constraints and then outline the best way to proceed.</p>
         </div>
       </div>
+</div>
+
+      
 
       <section class="faqSection">
       <h2>FAQs</h2>
       <div class="faq">
         <details>
-          <summary>What is risk profiling? <span class="chev">+</span></summary>
+          <summary>What is Risk Profiling? <span class="chev">+</span></summary>
           <p>
             Risk profiling is a structured assessment used to understand your ability and comfort to take investment risk.
             It helps align an asset allocation to your investment horizon, liquidity needs and behaviour in market volatility.
@@ -425,7 +493,7 @@ details[open] .chev{
         </details>
 
         <details>
-          <summary>Why is risk profiling important? <span class="chev">+</span></summary>
+          <summary>Why is Risk Profiling important? <span class="chev">+</span></summary>
           <p>
             The right allocation is not only about return expectations—it’s about staying invested through market cycles.
             A suitable risk profile reduces the likelihood of reactive decisions during market drawdowns.
@@ -434,14 +502,14 @@ details[open] .chev{
 
         <details>
           <summary>How long does the assessment take? <span class="chev">+</span></summary>
-          <p>Typically 3–4 minutes. Please answer based on your general comfort with volatility and your expected time horizon.</p>
+          <p>Typically 4–5 minutes. Please answer based on your general comfort with volatility and your expected time horizon.</p>
         </details>
 
         <details>
           <summary>How is the score calculated? <span class="chev">+</span></summary>
           <p>
-            The score is derived from your responses across two dimensions: (1) <b>risk capacity</b> (time horizon, liquidity and ability
-            to sustain volatility) and (2) <b>risk tolerance</b> (comfort with drawdowns and market fluctuations).
+            The score is derived from your responses across two dimensions: (1) <b>Risk Capacity</b> (time horizon, liquidity and ability
+            to sustain volatility) and (2) <b>Risk Tolerance</b> (comfort with drawdowns and market fluctuations).
             Suitability guardrails may be applied so the indicative outcome remains aligned to near-term liquidity needs and investment horizon.
           </p>
         </details>
@@ -500,7 +568,7 @@ details[open] .chev{
     </div>
   </div>
 
-  <footer>© 2026 Goalchi Capital Services LLP • Confidential Client Assessment</footer>
+  <footer>© 2016-2026 Goalchi Capital Services LLP • Confidential Client Assessment</footer>
 </main>
 
 <script>
