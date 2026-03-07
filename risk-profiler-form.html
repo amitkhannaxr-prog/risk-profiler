@@ -154,35 +154,40 @@
           </div>
         </section>
 
-        <section class="step" id="step2">
-          <h2 style="margin:0 0 10px;font-size:18px;">Your investing mindset</h2>
-          <p style="margin:0 0 14px;color:var(--muted);">These help us understand your comfort with financial risk.</p>
+                <section class="step" id="step2">
+          <h2 style="margin:0 0 10px;font-size:18px;">Section A — Portfolio context and horizon</h2>
+          <p style="margin:0 0 14px;color:var(--muted);">Please answer the following 3 questions.</p>
 
           <div class="question" data-qno="1">
-            <div class="q-title">Q1. Compared to others, how would you describe your willingness to take financial risk?</div>
-            <div class="q-sub">Please choose the option that best reflects you in general.</div>
+            <div class="q-title">Q1. What investment time horizon do you realistically have in mind for this portfolio before you may need to access a significant portion of the money?</div>
             <div class="options">
-              <label class="opt"><input type="radio" name="q1" value="1" required><span>Extremely low risk taker</span></label>
-              <label class="opt"><input type="radio" name="q1" value="2"><span>Very low risk taker</span></label>
-              <label class="opt"><input type="radio" name="q1" value="3"><span>Low risk taker</span></label>
-              <label class="opt"><input type="radio" name="q1" value="4"><span>Average risk taker</span></label>
-              <label class="opt"><input type="radio" name="q1" value="5"><span>High risk taker</span></label>
-              <label class="opt"><input type="radio" name="q1" value="6"><span>Very high risk taker</span></label>
-              <label class="opt"><input type="radio" name="q1" value="7"><span>Extremely high risk taker</span></label>
+              <label class="opt"><input type="radio" name="q1" value="1" required><span>Short term (1-3 years) - I may need to access a substantial portion of the money within 3 years.</span></label>
+              <label class="opt"><input type="radio" name="q1" value="2"><span>Medium term (3-5 years) - I may require a portion of the money within 3 to 5 years.</span></label>
+              <label class="opt"><input type="radio" name="q1" value="3"><span>Long term (5-10 years) - I do not expect to access the money for at least 5 years.</span></label>
+              <label class="opt"><input type="radio" name="q1" value="4"><span>Very long term (10-15 years) - The money is intended for long-term wealth accumulation.</span></label>
+              <label class="opt"><input type="radio" name="q1" value="5"><span>Intergenerational / legacy horizon - The money is intended primarily for long-term family wealth or legacy planning.</span></label>
             </div>
           </div>
 
           <div class="question" data-qno="2">
-            <div class="q-title">Q2. How easily do you adapt when things go wrong financially?</div>
-            <div class="q-sub">For example, unexpected expenses or temporary income disruptions.</div>
+            <div class="q-title">Q2. How important is this portfolio within your overall financial position and investment decisions?</div>
             <div class="options">
-              <label class="opt"><input type="radio" name="q2" value="1" required><span>Very uneasily</span></label>
-              <label class="opt"><input type="radio" name="q2" value="2"><span>Uneasily</span></label>
-              <label class="opt"><input type="radio" name="q2" value="3"><span>Somewhat uneasily</span></label>
-              <label class="opt"><input type="radio" name="q2" value="4"><span>Somewhat easily</span></label>
-              <label class="opt"><input type="radio" name="q2" value="5"><span>Easily</span></label>
-              <label class="opt"><input type="radio" name="q2" value="6"><span>Very easily</span></label>
-              <label class="opt"><input type="radio" name="q2" value="7"><span>Extremely easily</span></label>
+              <label class="opt"><input type="radio" name="q2" value="1" required><span>Very important - Losses or volatility in this portfolio would materially affect my financial comfort and investment decisions.</span></label>
+              <label class="opt"><input type="radio" name="q2" value="2"><span>Important - This portfolio is a meaningful part of my financial position, and I would be cautious about taking undue volatility here.</span></label>
+              <label class="opt"><input type="radio" name="q2" value="3"><span>Moderately important - This portfolio matters to me, but it is not central to my overall financial security.</span></label>
+              <label class="opt"><input type="radio" name="q2" value="4"><span>Of limited importance - This portfolio is a smaller part of my broader financial position and would have limited impact on my overall financial security.</span></label>
+              <label class="opt"><input type="radio" name="q2" value="5"><span>Not especially important - This portfolio is a limited allocation within a broader strategy, and fluctuations here would have minimal effect on my overall financial position.</span></label>
+            </div>
+          </div>
+
+          <div class="question" data-qno="3">
+            <div class="q-title">Q3. How dependent are you on this portfolio to generate regular cash flow or income over the next 3-5 years?</div>
+            <div class="options">
+              <label class="opt"><input type="radio" name="q3" value="1" required><span>I expect to rely on this portfolio for regular income or withdrawals.</span></label>
+              <label class="opt"><input type="radio" name="q3" value="2"><span>I may need periodic income or withdrawals from this portfolio.</span></label>
+              <label class="opt"><input type="radio" name="q3" value="3"><span>I may need limited withdrawals, but regular income is not a primary requirement.</span></label>
+              <label class="opt"><input type="radio" name="q3" value="4"><span>I do not expect to rely on this portfolio for income, though some withdrawals may occur.</span></label>
+              <label class="opt"><input type="radio" name="q3" value="5"><span>I do not expect to rely on this portfolio for income or withdrawals.</span></label>
             </div>
           </div>
 
@@ -193,72 +198,39 @@
         </section>
 
         <section class="step" id="step3">
-          <h2 style="margin:0 0 10px;font-size:18px;">Risk capacity</h2>
-          <p style="margin:0 0 14px;color:var(--muted);">These reflect your ability to take risk over time.</p>
-
-          <!-- Q3..Q7 -->
-          <div class="question" data-qno="3">
-            <div class="q-title">Q3. What is your expected investment time horizon for this portfolio?</div>
-            <div class="options">
-              <label class="opt"><input type="radio" name="q3" value="1" required><span>Less than 3 years</span></label>
-              <label class="opt"><input type="radio" name="q3" value="2"><span>3–5 years</span></label>
-              <label class="opt"><input type="radio" name="q3" value="3"><span>6–10 years</span></label>
-              <label class="opt"><input type="radio" name="q3" value="4"><span>11–15 years</span></label>
-              <label class="opt"><input type="radio" name="q3" value="5"><span>More than 15 years</span></label>
-              <label class="opt"><input type="radio" name="q3" value="6"><span>Long-term, flexible timing</span></label>
-              <label class="opt"><input type="radio" name="q3" value="7"><span>Very long-term / legacy planning</span></label>
-            </div>
-          </div>
+          <h2 style="margin:0 0 10px;font-size:18px;">Section B — Financial resilience and risk capacity</h2>
+          <p style="margin:0 0 14px;color:var(--muted);">Please answer the following 3 questions.</p>
 
           <div class="question" data-qno="4">
-            <div class="q-title">Q4. How much emergency liquidity do you maintain (coverage of expenses)?</div>
+            <div class="q-title">Q4. How much liquidity do you currently maintain to address unforeseen financial needs?</div>
             <div class="options">
-              <label class="opt"><input type="radio" name="q4" value="1" required><span>Less than 3 months</span></label>
-              <label class="opt"><input type="radio" name="q4" value="2"><span>3–6 months</span></label>
-              <label class="opt"><input type="radio" name="q4" value="3"><span>6–12 months</span></label>
-              <label class="opt"><input type="radio" name="q4" value="4"><span>12–24 months</span></label>
-              <label class="opt"><input type="radio" name="q4" value="5"><span>More than 24 months</span></label>
-              <label class="opt"><input type="radio" name="q4" value="6"><span>Strong reserves + contingency planning</span></label>
-              <label class="opt"><input type="radio" name="q4" value="7"><span>Very strong reserves + multiple buffers</span></label>
+              <label class="opt"><input type="radio" name="q4" value="1" required><span>Less than 3 months of expenses</span></label>
+              <label class="opt"><input type="radio" name="q4" value="2"><span>Approximately 3-6 months of expenses</span></label>
+              <label class="opt"><input type="radio" name="q4" value="3"><span>Approximately 6-12 months of expenses</span></label>
+              <label class="opt"><input type="radio" name="q4" value="4"><span>Approximately 12-24 months of expenses</span></label>
+              <label class="opt"><input type="radio" name="q4" value="5"><span>More than 24 months of expenses</span></label>
             </div>
           </div>
 
           <div class="question" data-qno="5">
-            <div class="q-title">Q5. How stable is your income?</div>
+            <div class="q-title">Q5. How stable and predictable is your household income over the next 3-5 years?</div>
             <div class="options">
-              <label class="opt"><input type="radio" name="q5" value="1" required><span>Highly uncertain / irregular</span></label>
-              <label class="opt"><input type="radio" name="q5" value="2"><span>Variable income</span></label>
+              <label class="opt"><input type="radio" name="q5" value="1" required><span>Highly uncertain or volatile</span></label>
+              <label class="opt"><input type="radio" name="q5" value="2"><span>Somewhat uncertain</span></label>
               <label class="opt"><input type="radio" name="q5" value="3"><span>Moderately stable</span></label>
-              <label class="opt"><input type="radio" name="q5" value="4"><span>Stable</span></label>
-              <label class="opt"><input type="radio" name="q5" value="5"><span>Very stable</span></label>
-              <label class="opt"><input type="radio" name="q5" value="6"><span>Very stable with high visibility</span></label>
-              <label class="opt"><input type="radio" name="q5" value="7"><span>Highly secure + diversified sources</span></label>
+              <label class="opt"><input type="radio" name="q5" value="4"><span>Stable and predictable</span></label>
+              <label class="opt"><input type="radio" name="q5" value="5"><span>Very stable and highly predictable</span></label>
             </div>
           </div>
 
           <div class="question" data-qno="6">
-            <div class="q-title">Q6. How likely are you to need withdrawals from this portfolio in the next 3–5 years?</div>
+            <div class="q-title">Q6. If this portfolio were to decline materially in value, how much would that affect your financial security or core life goals?</div>
             <div class="options">
-              <label class="opt"><input type="radio" name="q6" value="1" required><span>Very likely</span></label>
-              <label class="opt"><input type="radio" name="q6" value="2"><span>Likely</span></label>
-              <label class="opt"><input type="radio" name="q6" value="3"><span>Possible</span></label>
-              <label class="opt"><input type="radio" name="q6" value="4"><span>Unlikely</span></label>
-              <label class="opt"><input type="radio" name="q6" value="5"><span>Very unlikely</span></label>
-              <label class="opt"><input type="radio" name="q6" value="6"><span>Highly unlikely</span></label>
-              <label class="opt"><input type="radio" name="q6" value="7"><span>Not expected at all</span></label>
-            </div>
-          </div>
-
-          <div class="question" data-qno="7">
-            <div class="q-title">Q7. What portion of your overall investable wealth does this portfolio represent?</div>
-            <div class="options">
-              <label class="opt"><input type="radio" name="q7" value="1" required><span>Most of my investable wealth</span></label>
-              <label class="opt"><input type="radio" name="q7" value="2"><span>A large portion</span></label>
-              <label class="opt"><input type="radio" name="q7" value="3"><span>About half</span></label>
-              <label class="opt"><input type="radio" name="q7" value="4"><span>A smaller portion</span></label>
-              <label class="opt"><input type="radio" name="q7" value="5"><span>A small portion</span></label>
-              <label class="opt"><input type="radio" name="q7" value="6"><span>One of several diversified buckets</span></label>
-              <label class="opt"><input type="radio" name="q7" value="7"><span>A small, high-growth allocation</span></label>
+              <label class="opt"><input type="radio" name="q6" value="1" required><span>It would materially affect my financial security or essential goals.</span></label>
+              <label class="opt"><input type="radio" name="q6" value="2"><span>It would significantly affect important plans.</span></label>
+              <label class="opt"><input type="radio" name="q6" value="3"><span>It would have a moderate impact, but I could adjust.</span></label>
+              <label class="opt"><input type="radio" name="q6" value="4"><span>It would have limited impact on my financial position.</span></label>
+              <label class="opt"><input type="radio" name="q6" value="5"><span>It would have minimal impact on my financial security or goals.</span></label>
             </div>
           </div>
 
@@ -269,81 +241,85 @@
         </section>
 
         <section class="step" id="step4">
-          <h2 style="margin:0 0 10px;font-size:18px;">Risk tolerance & confirmation</h2>
-          <p style="margin:0 0 14px;color:var(--muted);">How you feel during volatility and drawdowns.</p>
+          <h2 style="margin:0 0 10px;font-size:18px;">Section C — Risk willingness and likely behavior</h2>
+          <p style="margin:0 0 14px;color:var(--muted);">Please answer the following 4 questions.</p>
 
-          <!-- Q8..Q12 -->
-          <div class="question" data-qno="8">
-            <div class="q-title">Q8. If markets fell ~20% in a short period, you would most likely:</div>
+          <div class="question" data-qno="7">
+            <div class="q-title">Q7. In order to pursue higher returns, how much investment risk are you willing to take with this portfolio?</div>
             <div class="options">
-              <label class="opt"><input type="radio" name="q8" value="1" required><span>Sell most holdings to reduce risk</span></label>
-              <label class="opt"><input type="radio" name="q8" value="2"><span>Reduce exposure materially</span></label>
-              <label class="opt"><input type="radio" name="q8" value="3"><span>Hold and wait</span></label>
-              <label class="opt"><input type="radio" name="q8" value="4"><span>Add selectively</span></label>
-              <label class="opt"><input type="radio" name="q8" value="5"><span>Add gradually with confidence</span></label>
-              <label class="opt"><input type="radio" name="q8" value="6"><span>Increase exposure meaningfully</span></label>
-              <label class="opt"><input type="radio" name="q8" value="7"><span>Strongly prefer to buy more</span></label>
+              <label class="opt"><input type="radio" name="q7" value="1" required><span>Very low risk - I prefer investments focused on preserving capital and limiting the possibility of loss.</span></label>
+              <label class="opt"><input type="radio" name="q7" value="2"><span>Low risk - I am willing to accept small fluctuations, but I prefer investments with limited risk.</span></label>
+              <label class="opt"><input type="radio" name="q7" value="3"><span>Moderate risk - I am willing to accept moderate fluctuations in pursuit of balanced growth.</span></label>
+              <label class="opt"><input type="radio" name="q7" value="4"><span>High risk - I am willing to accept significant short-term losses for the potential of higher long-term returns.</span></label>
+              <label class="opt"><input type="radio" name="q7" value="5"><span>Very high risk - I am comfortable taking substantial investment risk to maximize long-term return potential.</span></label>
+            </div>
+          </div>
+
+          <div class="question" data-qno="8">
+            <div class="q-title">Q8. If a few months after investing, the value of your portfolio declines by about 20% due to market movements, what would you most likely do?</div>
+            <div class="options">
+              <label class="opt"><input type="radio" name="q8" value="1" required><span>Sell the investments to limit further losses and preserve capital.</span></label>
+              <label class="opt"><input type="radio" name="q8" value="2"><span>Reduce exposure and move part of the portfolio to safer assets.</span></label>
+              <label class="opt"><input type="radio" name="q8" value="3"><span>Remain invested but monitor the situation carefully.</span></label>
+              <label class="opt"><input type="radio" name="q8" value="4"><span>Continue holding the investments, as such volatility is expected in markets.</span></label>
+              <label class="opt"><input type="radio" name="q8" value="5"><span>Invest additional funds to take advantage of lower prices.</span></label>
             </div>
           </div>
 
           <div class="question" data-qno="9">
-            <div class="q-title">Q9. Your comfort with short-term portfolio fluctuations is:</div>
+            <div class="q-title">Q9. If this portfolio underperformed expectations for 2-3 years but remained aligned with the long-term plan, what would you most likely do?</div>
             <div class="options">
-              <label class="opt"><input type="radio" name="q9" value="1" required><span>Very uncomfortable</span></label>
-              <label class="opt"><input type="radio" name="q9" value="2"><span>Uncomfortable</span></label>
-              <label class="opt"><input type="radio" name="q9" value="3"><span>Somewhat uncomfortable</span></label>
-              <label class="opt"><input type="radio" name="q9" value="4"><span>Neutral</span></label>
-              <label class="opt"><input type="radio" name="q9" value="5"><span>Comfortable</span></label>
-              <label class="opt"><input type="radio" name="q9" value="6"><span>Very comfortable</span></label>
-              <label class="opt"><input type="radio" name="q9" value="7"><span>Extremely comfortable</span></label>
+              <label class="opt"><input type="radio" name="q9" value="1" required><span>Exit the strategy and move to safer investments.</span></label>
+              <label class="opt"><input type="radio" name="q9" value="2"><span>Reduce risk materially and reallocate toward more stable assets.</span></label>
+              <label class="opt"><input type="radio" name="q9" value="3"><span>Reassess the portfolio and make partial adjustments.</span></label>
+              <label class="opt"><input type="radio" name="q9" value="4"><span>Stay invested and continue periodic review.</span></label>
+              <label class="opt"><input type="radio" name="q9" value="5"><span>Stay committed to the strategy and rebalance as appropriate.</span></label>
             </div>
           </div>
 
           <div class="question" data-qno="10">
-            <div class="q-title">Q10. The maximum short-term loss you could tolerate without changing your plan:</div>
+            <div class="q-title">Q10. Imagine you are participating in a game show and must choose one of the following options. Which option would you most likely select?</div>
             <div class="options">
-              <label class="opt"><input type="radio" name="q10" value="1" required><span>Up to ~5%</span></label>
-              <label class="opt"><input type="radio" name="q10" value="2"><span>~5–10%</span></label>
-              <label class="opt"><input type="radio" name="q10" value="3"><span>~10–15%</span></label>
-              <label class="opt"><input type="radio" name="q10" value="4"><span>~15–25%</span></label>
-              <label class="opt"><input type="radio" name="q10" value="5"><span>~25–35%</span></label>
-              <label class="opt"><input type="radio" name="q10" value="6"><span>~35–45%</span></label>
-              <label class="opt"><input type="radio" name="q10" value="7"><span>More than ~45%</span></label>
+              <label class="opt"><input type="radio" name="q10" value="1" required><span>Receive ₹10 lakh with certainty and exit the game.</span></label>
+              <label class="opt"><input type="radio" name="q10" value="2"><span>A 50% chance of winning ₹25 lakh.</span></label>
+              <label class="opt"><input type="radio" name="q10" value="3"><span>A 25% chance of winning ₹50 lakh.</span></label>
+              <label class="opt"><input type="radio" name="q10" value="4"><span>A 10% chance of winning ₹1 crore.</span></label>
+              <label class="opt"><input type="radio" name="q10" value="5"><span>A 5% chance of winning ₹2 crore.</span></label>
             </div>
           </div>
 
+          <div class="actions">
+            <button class="btn btn-secondary" type="button" onclick="prevStep()">Back</button>
+            <button class="btn btn-primary" type="button" onclick="nextStep()">Next</button>
+          </div>
+        </section>
+
+        <section class="step" id="step5">
+          <h2 style="margin:0 0 10px;font-size:18px;">Section D — Experience and client context</h2>
+          <p style="margin:0 0 14px;color:var(--muted);">Please answer the following 2 questions, then submit.</p>
+
           <div class="question" data-qno="11">
-            <div class="q-title">Q11. When markets are volatile, you generally prefer to:</div>
+            <div class="q-title">Q11. How would you describe your familiarity with investing in financial markets?</div>
             <div class="options">
-              <label class="opt"><input type="radio" name="q11" value="1" required><span>Move to safety quickly</span></label>
-              <label class="opt"><input type="radio" name="q11" value="2"><span>Reduce risk</span></label>
-              <label class="opt"><input type="radio" name="q11" value="3"><span>Stay invested</span></label>
-              <label class="opt"><input type="radio" name="q11" value="4"><span>Look for opportunities</span></label>
-              <label class="opt"><input type="radio" name="q11" value="5"><span>Add gradually</span></label>
-              <label class="opt"><input type="radio" name="q11" value="6"><span>Add meaningfully</span></label>
-              <label class="opt"><input type="radio" name="q11" value="7"><span>Prefer to buy more aggressively</span></label>
+              <label class="opt"><input type="radio" name="q11" value="1" required><span>I am a novice and do not understand financial markets well.</span></label>
+              <label class="opt"><input type="radio" name="q11" value="2"><span>I have a basic understanding of investing concepts and risks.</span></label>
+              <label class="opt"><input type="radio" name="q11" value="3"><span>I have invested occasionally and understand that markets fluctuate over time.</span></label>
+              <label class="opt"><input type="radio" name="q11" value="4"><span>I am an experienced investor familiar with multiple investment strategies.</span></label>
+              <label class="opt"><input type="radio" name="q11" value="5"><span>I actively manage investments across multiple asset classes and understand market cycles well.</span></label>
             </div>
           </div>
 
           <div class="question" data-qno="12">
-            <div class="q-title">Q12. Your return expectation from this portfolio is closest to:</div>
+            <div class="q-title">Q12. Which of the following best reflects your current life stage and financial responsibilities?</div>
             <div class="options">
-              <label class="opt"><input type="radio" name="q12" value="1" required><span>Very low, prioritize stability</span></label>
-              <label class="opt"><input type="radio" name="q12" value="2"><span>Low with limited volatility</span></label>
-              <label class="opt"><input type="radio" name="q12" value="3"><span>Moderate, balanced</span></label>
-              <label class="opt"><input type="radio" name="q12" value="4"><span>Moderate-high, accept volatility</span></label>
-              <label class="opt"><input type="radio" name="q12" value="5"><span>High, accept drawdowns</span></label>
-              <label class="opt"><input type="radio" name="q12" value="6"><span>Very high, accept large drawdowns</span></label>
-              <label class="opt"><input type="radio" name="q12" value="7"><span>Maximum growth, volatility acceptable</span></label>
+              <label class="opt"><input type="radio" name="q12" value="1" required><span>Early wealth-building stage - I am in the early phase of building income, savings, and long-term wealth.</span></label>
+              <label class="opt"><input type="radio" name="q12" value="2"><span>Family and commitment stage - I am balancing wealth creation with growing family, lifestyle, or financial responsibilities.</span></label>
+              <label class="opt"><input type="radio" name="q12" value="3"><span>Established accumulation stage - I am in a relatively stable and stronger earning phase, focused on building and preserving wealth.</span></label>
+              <label class="opt"><input type="radio" name="q12" value="4"><span>Pre-retirement transition stage - I am approaching retirement and becoming more focused on capital protection, income planning, and financial security.</span></label>
+              <label class="opt"><input type="radio" name="q12" value="5"><span>Retirement / post-retirement stage - I am primarily focused on preserving wealth, managing withdrawals, and maintaining long-term financial stability.</span></label>
             </div>
           </div>
 
-          <div class="question" style="padding:14px;">
-            <label class="opt" style="border-color:var(--border);">
-              <input type="checkbox" name="confirm" required />
-              <span>I confirm that the information provided above is true and accurate to the best of my knowledge.</span>
-            </label>
-          </div>
 
           <div class="actions">
             <button class="btn btn-secondary" type="button" onclick="prevStep()">Back</button>
@@ -358,7 +334,7 @@
             By submitting, you consent to receive communication from Goalchi Capital Services LLP regarding your assessment and next steps.
           </div>
         </section>
-      </form>
+        </form>
     </div>
   </div>
 
@@ -366,20 +342,19 @@
 </main>
 
 <script>
-  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbydMWCXrRuC15eHeBy0z2GFWbkvI3JZ7YY8QBzlAISZsvvwuySs_Wn8SWBzv2_bthd6mw/exec";
-  const VERSION = "premium_v3";
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyXGoP-R3YFWUmbV0kfEq9pCqtMFlDgPiSKhtb5UozCiYHdlj6ovScaPXtvLcNAXHAQ0Q/exec";
+  const VERSION = "premium_v4";
 
-  const totalSteps = 4;
+  const totalSteps = 5;
   let currentStep = 0;
   window.isSubmitting = false;
 
-  const RISK_BANDS = [
-    { key:"Very Cautious", min:1.0, max:2.2, alloc:{ equity:[0,10], debt:[90,100], gold:[0,10] } },
-    { key:"Conservative", min:2.2, max:3.2, alloc:{ equity:[10,20], debt:[70,80], gold:[0,10] } },
-    { key:"Moderate Conservative", min:3.2, max:4.2, alloc:{ equity:[30,40], debt:[50,60], gold:[0,10] } },
-    { key:"Moderate", min:4.2, max:5.2, alloc:{ equity:[50,60], debt:[30,40], gold:[0,10] } },
-    { key:"Aggressive", min:5.2, max:6.2, alloc:{ equity:[70,80], debt:[10,20], gold:[0,10] } },
-    { key:"Very Aggressive", min:6.2, max:7.01, alloc:{ equity:[90,100], debt:[0,10], gold:[0,10] } },
+    const RISK_BANDS = [
+    { key:"Very Conservative", min:12, max:22, alloc:{ equity:[0,10], debt:[90,100], gold:[0,10] } },
+    { key:"Conservative",     min:22, max:32, alloc:{ equity:[10,30], debt:[70,90],  gold:[0,10] } },
+    { key:"Moderate",         min:32, max:42, alloc:{ equity:[40,60], debt:[40,60],  gold:[0,10] } },
+    { key:"Aggressive",       min:42, max:52, alloc:{ equity:[70,90], debt:[10,30],  gold:[0,10] } },
+    { key:"Very Aggressive",  min:52, max:61, alloc:{ equity:[90,100],debt:[0,10],   gold:[0,10] } },
   ];
 
   function setStepError(message){
@@ -397,10 +372,10 @@
     setStepError("");
     document.querySelectorAll(".step").forEach(s=>s.classList.remove("active"));
     document.getElementById("step"+step).classList.add("active");
-    const pct=(step===0)?0:(step/4)*100;
+    const pct=(step===0)?0:(step/totalSteps)*100;
     document.getElementById("progressBar").style.width=pct+"%";
-    const names={0:"Welcome",1:"Client details",2:"Mindset",3:"Capacity",4:"Tolerance & confirmation"};
-    document.getElementById("stepLabelLeft").textContent=`Step ${Math.min(step+1,5)} of 5`;
+    const names={0:"Welcome",1:"Client details",2:"Section A",3:"Section B",4:"Section C",5:"Section D"};
+    document.getElementById("stepLabelLeft").textContent=`Step ${Math.min(step+1, totalSteps+1)} of ${totalSteps+1}`;
     document.getElementById("stepLabelRight").textContent=names[step]||"";
     window.scrollTo({top:0,behavior:"smooth"});
   }
@@ -448,27 +423,15 @@
     return false;
   }
 
-  function nextStep(){ if(!validateAndStayOnStep(currentStep)) return; if(currentStep<4){currentStep++; showStep(currentStep);} }
+  function nextStep(){ if(!validateAndStayOnStep(currentStep)) return; if(currentStep<5){currentStep++; showStep(currentStep);} }
   function prevStep(){ if(currentStep>0){currentStep--; showStep(currentStep);} }
 
-  function bandFromComposite(avg){
-    for(const b of RISK_BANDS){ if(avg>=b.min && avg<b.max) return b.key; }
+  function bandFromScore(score){
+    for(const b of RISK_BANDS){ if(score>=b.min && score<b.max) return b.key; }
     return "Very Aggressive";
   }
   function allocForBand(band){
-    const clean=band.replace(" (Capacity cap applied)","");
-    return (RISK_BANDS.find(x=>x.key===clean)||RISK_BANDS[0]).alloc;
-  }
-  function capByHardRules(band, a){
-    // hard caps based on capacity questions:
-    // q3 (horizon) <=2 OR q4 (emergency) <=2 OR q6 (withdrawals) <=2 => cap to Moderate Conservative
-    const order=["Very Cautious","Conservative","Moderate Conservative","Moderate","Aggressive","Very Aggressive"];
-    const idx=(x)=>Math.max(0,order.indexOf(x.replace(" (Capacity cap applied)","")));
-    const hard = (a.q3<=2) || (a.q4<=2) || (a.q6<=2);
-    if(!hard) return {band, override:"No"};
-    const max="Moderate Conservative";
-    if(idx(band)>idx(max)) return {band:max+" (Capacity cap applied)", override:"Yes"};
-    return {band, override:"No"};
+    return (RISK_BANDS.find(x=>x.key===band)||RISK_BANDS[0]).alloc;
   }
 
   async function submitAssessment(){
@@ -495,23 +458,11 @@
       const a={};
       for(let i=1;i<=12;i++){a["q"+i]=parseInt(fd.get("q"+i),10);}
 
-      // Tolerance: Q1,Q2,Q8..Q12 (7 items)
-      const tol=[a.q1,a.q2,a.q8,a.q9,a.q10,a.q11,a.q12];
-      const tolAvg=tol.reduce((x,y)=>x+y,0)/tol.length;
+      const totalScore = Object.values(a).reduce((x,y)=>x+y,0); // 12..60
 
-      // Capacity: Q3..Q7 (5 items)
-      const cap=[a.q3,a.q4,a.q5,a.q6,a.q7];
-      const capAvg=cap.reduce((x,y)=>x+y,0)/cap.length;
-
-      const compositeAvg=(0.60*tolAvg)+(0.40*capAvg); // 1..7
-      const score100=Math.round(((compositeAvg-1)/6)*100);
-
-      let band=bandFromComposite(compositeAvg);
-      let override="No";
-      const hard=capByHardRules(band,a);
-      band=hard.band; override=hard.override;
-
-      const alloc=allocForBand(band);
+      let band = bandFromScore(totalScore);
+      const override = "No";
+      const alloc = allocForBand(band);
 
       const submissionId="GC-"+Date.now();
 
@@ -526,7 +477,7 @@
         q5:String(a.q5), q6:String(a.q6), q7:String(a.q7), q8:String(a.q8),
         q9:String(a.q9), q10:String(a.q10), q11:String(a.q11), q12:String(a.q12),
         q13:"", q14:"", q15:"",
-        score:String(score100),
+        score:String(totalScore),
         band,
         override,
         version: VERSION,
@@ -545,7 +496,8 @@
         clientEmail: fd.get("clientEmail")||"",
         clientMobile: fd.get("clientMobile")||"",
         clientCity: fd.get("clientCity")||"",
-        band, score100, allocation: alloc,
+        band, score: totalScore, allocation: alloc,
+        totalScore,
         answers: Object.fromEntries(Array.from({length:12},(_,i)=>["q"+(i+1), fd.get("q"+(i+1))])),
       };
       sessionStorage.setItem("riskProfilerSubmissionPremium", JSON.stringify(clientSafe));

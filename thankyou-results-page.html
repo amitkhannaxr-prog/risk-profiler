@@ -304,25 +304,30 @@
               </tr>
             </thead>
             <tbody id="allocBody">
-              <tr data-band="very low risk">
-                <td>Very low risk</td>
-                <td>Very low risk capacity and tolerance; unable to take on risk due to having too many financial obligations and/or modest income and wealth build up; has low tolerance towards risk.</td>
+              <tr data-band="very conservative">
+                <td>Very Conservative</td>
+                <td>Lowest risk capacity and tolerance; prioritizes capital protection and liquidity; prefers minimal volatility.</td>
                 <td>Equity: 0–10%<br>Debt and cash: 90–100%</td>
               </tr>
-              <tr data-band="low risk">
-                <td>Low risk</td>
-                <td>Low risk capacity and tolerance; cannot take on too much risk due to having financial obligations and/or modest income and wealth build up; has low tolerance towards risk; slightly higher risk profile as compared to the ‘Very low risk’ investor.</td>
+              <tr data-band="conservative">
+                <td>Conservative</td>
+                <td>Low risk capacity and tolerance; seeks stability with limited growth; can tolerate small drawdowns.</td>
                 <td>Equity: 10–30%<br>Debt and cash: 70–90%</td>
               </tr>
-              <tr data-band="medium risk">
-                <td>Medium risk</td>
-                <td>Medium level of risk capacity and tolerance; can take on risk but not too much due to financial obligations and/or modest income and wealth build up; has low-medium tolerance towards risk; higher risk profile as compared to the ‘Low risk’ investor.</td>
+              <tr data-band="moderate">
+                <td>Moderate</td>
+                <td>Balanced risk capacity and willingness; aims for growth with moderate volatility; can tolerate periodic drawdowns.</td>
                 <td>Equity: 40–60%<br>Debt and cash: 40–60%</td>
               </tr>
-              <tr data-band="high risk">
-                <td>High risk</td>
-                <td>High level of risk capacity and tolerance; can take on risk; financial obligations are taken care of; has good income and wealth build up; has medium-high tolerance towards risk; higher risk profile as compared to the ‘Medium risk’ investor.</td>
+              <tr data-band="aggressive">
+                <td>Aggressive</td>
+                <td>Higher risk capacity and willingness; growth-focused; comfortable with meaningful volatility and drawdowns.</td>
                 <td>Equity: 70–90%<br>Debt and cash: 10–30%</td>
+              </tr>
+              <tr data-band="very aggressive">
+                <td>Very Aggressive</td>
+                <td>Highest risk capacity and willingness; long-term growth focused; comfortable with large volatility and drawdowns.</td>
+                <td>Equity: 90–100%<br>Debt and cash: 0–10%</td>
               </tr>
             </tbody>
           </table>
@@ -410,13 +415,23 @@
         };
       }
 
-      function normalizeBandForRow(bandText) {
+            function normalizeBandForRow(bandText) {
         var b = String(bandText || "").toLowerCase().trim();
         if (!b) return "";
-        if (b.indexOf("very low") >= 0) return "very low risk";
-        if (b.indexOf("low") >= 0) return "low risk";
-        if (b.indexOf("medium") >= 0 || b.indexOf("moderate") >= 0) return "medium risk";
-        if (b.indexOf("high") >= 0 || b.indexOf("aggressive") >= 0) return "high risk";
+
+        // New 5-band model
+        if (b.indexOf("very conservative") >= 0) return "very conservative";
+        if (b.indexOf("conservative") >= 0) return "conservative";
+        if (b.indexOf("moderate") >= 0) return "moderate";
+        if (b.indexOf("very aggressive") >= 0) return "very aggressive";
+        if (b.indexOf("aggressive") >= 0) return "aggressive";
+
+        // Backward-compatible mapping (old labels)
+        if (b.indexOf("very low") >= 0) return "very conservative";
+        if (b.indexOf("low") >= 0) return "conservative";
+        if (b.indexOf("medium") >= 0) return "moderate";
+        if (b.indexOf("high") >= 0) return "aggressive";
+
         return "";
       }
 
